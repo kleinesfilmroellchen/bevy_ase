@@ -1,11 +1,15 @@
 [package]
 name = "bevy_ase"
+description = "Utilities for loading Aseprite files into a Bevy application"
+license-file = "LICENSE"
 version = "0.6.0"
 authors = [
 	"Bruce Reif",
 	"alpine_alpaca <alpine.alpaca.games@gmail.com>",
 	"kleines Filmröllchen <filmroellchen@serenityos.org>",
 ]
+keywords = ["bevy", "aseprite"]
+categories = ["game-development", "graphics"]
 edition = "2021"
 
 [dependencies]
