@@ -39,7 +39,7 @@
 //!     App::new()
 //!         .add_plugins(DefaultPlugins)
 //!         .add_plugin(AseLoaderDefaultPlugin)
-//!         .add_system(load_sprites.system());
+//!         .add_systems(Startup, load_sprites);
 //! }
 //!
 //! // Get an aseprite asset and send it to the loader.

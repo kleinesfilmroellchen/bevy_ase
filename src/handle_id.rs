@@ -29,7 +29,7 @@
 //!         "assets/my_file.aseprite#FrameImage0".into()
 //!     );
 //!
-//!     let my_image_asset: Option<&Image> = image_assets.get(frame_image_handle_id);
+//!     let my_image_asset: Option<&Image> = image_assets.get(&image_assets.get_handle(frame_image_handle_id));
 //! }
 //! ```
 //!

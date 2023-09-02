@@ -46,7 +46,7 @@ impl Plugin for AseLoaderDefaultPlugin {
             .init_resource::<Loader>()
             .init_resource::<AseFileMap>()
             .init_asset_loader::<AseAssetLoader>()
-            .add_system(ase_importer);
+            .add_systems(Update, ase_importer);
     }
 }
 
@@ -285,7 +285,7 @@ pub(crate) type AseAssetResources<'a> = (
 /// // Creates a Bevy app and adds the ase_importer system.
 /// // This system is already added by default in AseLoaderPlugin.
 /// fn app() {
-///     App::new().add_system(ase_importer.system());
+///     App::new().add_systems(Update, ase_importer);
 /// }
 /// ```
 pub fn ase_importer(
@@ -301,7 +301,7 @@ pub fn ase_importer(
         debug!("Processing asefiles (batches: {})", pending);
     }
     if loader.all_todo_handles_ready(&asset_server) {
-        loader.spawn_tasks(&task_pool, &mut aseassets);
+        loader.spawn_tasks(task_pool, &mut aseassets);
     }
     loader.move_finished_into_resources(resources);
 }

@@ -1,4 +1,5 @@
 use asefile::AsepriteFile;
+use bevy::reflect::TypePath;
 use bevy::reflect::TypeUuid;
 use std::path::PathBuf;
 
@@ -20,7 +21,7 @@ use std::path::PathBuf;
 ///    handle.clone().typed::<AseAsset>()
 /// }
 /// ```
-#[derive(Debug, TypeUuid)]
+#[derive(Debug, TypeUuid, TypePath)]
 #[uuid = "053511cb-7843-47a3-b5b6-c3279dc7cf6f"]
 pub struct AseAsset {
     pub(crate) data: AseData,

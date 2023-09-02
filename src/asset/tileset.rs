@@ -1,7 +1,7 @@
 use asefile::{AsepriteFile, TilesetImageError};
 use bevy::{
     prelude::*,
-    reflect::TypeUuid,
+    reflect::{TypePath, TypeUuid},
     render::render_resource::{Extent3d, TextureDimension, TextureFormat},
 };
 use std::fmt;
@@ -77,7 +77,7 @@ impl TileSize {
 }
 
 /// Data and texture from an Aseprite tileset.
-#[derive(Debug, TypeUuid)]
+#[derive(Debug, TypeUuid, TypePath)]
 #[uuid = "0e2dbd05-dbad-46c9-a943-395f83dfa4ba"]
 pub struct Tileset {
     /// Tileset id.
